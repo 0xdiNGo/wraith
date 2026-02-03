@@ -2210,6 +2210,7 @@ static void server_dns_callback(int id, void *client_data, const char *host,
         putlog(LOG_SERV, "*", "SSL Failed to connect to %s (Error while switching to SSL)", dcc[servidx].host);
         trying_server = 0;
         lostdcc(servidx);
+        delete[] ip;
         return;
       }
     }
